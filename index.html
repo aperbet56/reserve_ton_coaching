@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coaching Sportif - Réservation de Séance</title>
+    <!-- Importation des polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Importation des styles -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Début du header -->
+    <header>
+      <h1>Réserve ton <span>Coaching</span></h1>
+      <p>
+        Choisis ta date, ton créneau d'une heure et prépare-toi à transpirer !
+      </p>
+    </header>
+    <!-- Fin du header -->
+
+    <!-- Début du main -->
+    <main class="main__content">
+      <!-- Étape 1 : Choix de la Date & Heure -->
+      <section class="card step__section">
+        <h2>1. Date & Horaires</h2>
+
+        <div class="form__group">
+          <label for="booking__date">Choisir une date :</label>
+          <input type="date" id="booking__date" min="" />
+        </div>
+
+        <label>Créneaux disponibles :</label>
+        <div id="slots__container" class="slots__grid">
+          <p class="info__text">
+            Veuillez sélectionner une date pour voir les créneaux.
+          </p>
+        </div>
+      </section>
+      <!-- Fin Étape 1-->
+
+      <!-- Étape 2 : Formulaire Client -->
+      <section class="card step__section">
+        <h2>2. Vos Informations</h2>
+        <form id="booking__form">
+          <div class="form__group">
+            <label for="client__name">Votre nom :</label>
+            <input
+              type="text"
+              id="client__name"
+              required
+              placeholder="Ex: Dupont"
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="client__firstname">Votre prénom :</label>
+            <input
+              type="text"
+              id="client__firstname"
+              required
+              placeholder="Ex: Jean"
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="client__email">Adresse Email :</label>
+            <input
+              type="email"
+              id="client__email"
+              required
+              placeholder="Ex: jean.dupont@email.com"
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="client__phone">Téléphone :</label>
+            <input
+              type="tel"
+              id="client__phone"
+              required
+              placeholder="Ex: 06 12 34 56 78"
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="booking__goal">Objectif de la séance :</label>
+            <select id="booking__goal">
+              <option value="Perte de poids / Cardio">
+                Perte de poids / Cardio
+              </option>
+              <option value="Prise de masse / Musculation">
+                Prise de masse / Musculation
+              </option>
+              <option value="Remise en forme générale">
+                Remise en forme générale
+              </option>
+              <option value="Préparation mentale & physique">
+                Préparation athlétique
+              </option>
+            </select>
+          </div>
+
+          <button type="submit" id="submit__btn" disabled>
+            Confirmer mon rendez-vous
+          </button>
+        </form>
+      </section>
+      <!-- Fin Étape 2-->
+
+      <!-- Section Récapitulative (Mes RDV) -->
+      <section class="card appointments__section">
+        <h2>Mes Séances Planifiées</h2>
+        <div id="appointments__list">
+          <p class="info__text">Aucun rendez-vous programmé pour le moment.</p>
+        </div>
+      </section>
+      <!-- Fin de la section recapitulative -->
+    </main>
+    <!-- Fin du main -->
+
+    <!-- Début  du footer -->
+    <footer>
+      <p>
+        &copy; <span class="year">2026</span> - Coaching Sportif Inc. Tous
+        droits réservés.
+      </p>
+      <ul class="footer__links">
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </footer>
+    <!-- Fin du footer -->
+
+    <!-- Importation du fichier JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
