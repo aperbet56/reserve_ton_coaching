@@ -1,0 +1,278 @@
+/*** Variables  CSS ****/
+
+:root {
+    --bg-color: #121214;
+    --card-bg: #1a1a1e;
+    --primary-color: #ffcc00;
+    --primary-hover: #e6b800;
+    --text-color: #ffffff;
+    --text-muted: #a0a0a5;
+    --border-color: #2a2a30;
+    --success-color: #00e676;
+}
+
+/**** Reset ****/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Montserrat", sans-serif;
+}
+
+select,
+button,
+input {
+    font-family: "Inter", sans-serif;
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/**** body ****/
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+}
+
+
+/**** body, main, footer__links ****/
+
+body,
+.main__content,
+.appointment__item,
+.footer__links {
+    display: flex;
+    flex-direction: column;
+}
+
+/**** header ****/
+
+header {
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+}
+
+header h1 span {
+    color: var(--primary-color);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 0.4rem;
+}
+
+/**** header, footer ****/
+
+header,
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+/**** main ****/
+
+.main__content {
+    flex-grow: 1;
+    gap: 1.5rem;
+    margin-block: 1.2rem;
+}
+
+/**** sections ****/
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.4rem;
+    display: inline-block;
+}
+
+/**** formulaire ****/
+
+.form__group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    appearance: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary-color);
+}
+
+/**** Grille des boutons d'horaires (adaptés pour le tactile) ****/
+
+.slots__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.slot__btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.75rem 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.slot__btn:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.slot__btn.selected {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000000;
+}
+
+.slot__btn:disabled {
+    background-color: #222226;
+    color: #444;
+    border-color: #222226;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: #000000;
+    margin-top: 0.5rem;
+}
+
+button[type="submit"]:disabled {
+    background-color: #2a2a30;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.info__text {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 0.75rem 0;
+}
+
+/**** section appointments__section ****/
+
+.appointment__item {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--success-color);
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+}
+
+.appointment__info h3 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.appointment__info p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-block: 0.6rem;
+}
+
+.cancel__btn {
+    background-color: #ff5252;
+    color: #fffffe;
+    padding: 0.6rem;
+}
+
+/**** footer ****/
+
+footer {
+    margin-top: auto;
+    padding: 2rem 0 1rem 0;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer__links {
+    gap: 0.5rem;
+}
+
+.footer__links a {
+    color: var(--primary-color);
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer__links a:hover {
+    color: var(--primary-hover);
+}
