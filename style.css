@@ -194,12 +194,31 @@ select:focus {
 }
 
 .slot__btn {
+    opacity: 0;
     background-color: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-color);
     padding: 0.75rem 0.5rem;
     transition: all 0.3s ease-in-out;
+    animation: fadeInSlot 0.3s ease forwards;
+    /* Le décalage (delay) est injecté dynamiquement par le JavaScript */
+    animation-delay: calc(var(--delay) * 0.04s);
 }
+
+/**** Animation fadeInSlot ****/
+
+@keyframes fadeInSlot {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .slot__btn:hover:not(:disabled) {
     border-color: var(--primary-color);
@@ -345,8 +364,8 @@ footer p {
         max-width: 1240px;
     }
 
-    .card {
-        min-width: 450px;
+    .step__section {
+        width: 450px;
     }
 
     .appointments__section {
