@@ -112,6 +112,14 @@ footer {
 
 /**** sections ****/
 
+.step__section {
+    transition: all 0.3s ease-in-out;
+}
+
+.step__section:nth-of-type(1):hover h2 i.fa-calendar-days {
+    transform: scale(1.25) rotate(-5deg);
+}
+
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -126,6 +134,20 @@ h2 {
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.4rem;
     display: inline-block;
+}
+
+h2 i {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+}
+
+h2 i,
+button[type="submit"] i {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.step__section:nth-of-type(2):hover h2 i.fa-user {
+    transform: translateY(-3px);
 }
 
 /**** formulaire ****/
@@ -204,12 +226,21 @@ button[type="submit"] {
     background-color: var(--primary-color);
     color: #000000;
     margin-top: 0.5rem;
+    transition: all 0.3s ease-in-out;
 }
 
 button[type="submit"]:disabled {
     background-color: #2a2a30;
     color: #666666;
     cursor: not-allowed;
+}
+
+button[type="submit"] i {
+    font-size: 1.05rem;
+}
+
+button[type="submit"]:hover:not(:disabled) i.fa-circle-check {
+    transform: scale(1.3);
 }
 
 .info__text {
@@ -222,6 +253,10 @@ button[type="submit"]:disabled {
 }
 
 /**** section appointments__section ****/
+
+.appointments__section:hover h2 i.fa-dumbbell {
+    transform: rotate(360deg);
+}
 
 .appointment__item {
     background-color: var(--bg-color);
@@ -242,6 +277,10 @@ button[type="submit"]:disabled {
     font-size: 0.95rem;
     color: var(--text-muted);
     margin-block: 0.6rem;
+}
+
+.appointment__info p i {
+    width: 16px;
 }
 
 .cancel__btn {
