@@ -7,6 +7,11 @@
     <!-- Importation de la favicon -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <!-- Importation des polices -->
+    <!-- CDN font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +36,7 @@
     <main class="main__content">
       <!-- Étape 1 : Choix de la Date & Heure -->
       <section class="card step__section">
-        <h2>1. Date & Horaires</h2>
+        <h2><i class="fa-solid fa-calendar-days"></i> 1. Date & Horaires</h2>
 
         <div class="form__group">
           <label for="booking__date">Choisir une date :</label>
@@ -49,7 +54,7 @@
 
       <!-- Étape 2 : Formulaire Client -->
       <section class="card step__section">
-        <h2>2. Vos Informations</h2>
+        <h2><i class="fa-solid fa-user"></i> 2. Vos Informations</h2>
         <form id="booking__form">
           <div class="form__group">
             <label for="client__name">Votre nom :</label>
@@ -110,7 +115,7 @@
           </div>
 
           <button type="submit" id="submit__btn" disabled>
-            Confirmer mon rendez-vous
+            Confirmer mon rendez-vous <i class="fa-solid fa-circle-check"></i>
           </button>
         </form>
       </section>
@@ -118,7 +123,7 @@
 
       <!-- Section Récapitulative (Mes RDV) -->
       <section class="card appointments__section">
-        <h2>Mes Séances Planifiées</h2>
+        <h2><i class="fa-solid fa-dumbbell"></i> Mes Séances Planifiées</h2>
         <div id="appointments__list">
           <p class="info__text">Aucun rendez-vous programmé pour le moment.</p>
         </div>
@@ -139,6 +144,10 @@
       </ul>
     </footer>
     <!-- Fin du footer -->
+
+    <!-- Chargement de LUCIDE ICONS -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Importation du fichier JavaScript -->
     <script src="script.js"></script>
