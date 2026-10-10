@@ -32,11 +32,13 @@ const getCurrentYear = () => {
 // Appel de la fonction getCurrentYear()
 getCurrentYear();
 
-// Déclaration de la fonction fléchée formatDate qui va permettre d'afficher les dates au format français (JJ/MM/AAAA)
+// Déclaration de la fonction formatDate qui va permettre d'afficher les dates au format français (JJ/MM/AAAA)
 const formatDate = (dateString) => {
   const [year, month, day] = dateString.split("-");
   return `${day}/${month}/${year}`;
 };
 
-// Appel de la fonction formatDate()
-formatDate();
+// Déclaration de la fonction checkFormValidity pour activer/désactiver le bouton "Confirmer mon rendez-vous" selon si une date et un créneau ont été choisi
+const checkFormValidity = () => {
+  submitBtn.disabled = !(selectedDate && selectedSlot);
+};
