@@ -230,7 +230,8 @@ select:focus {
     color: var(--primary-color);
 }
 
-.slot__btn.selected {
+.slot__btn.selected,
+.slot__btn.selected:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: #000000;
