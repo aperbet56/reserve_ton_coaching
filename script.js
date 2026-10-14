@@ -42,3 +42,63 @@ const formatDate = (dateString) => {
 const checkFormValidity = () => {
   submitBtn.disabled = !(selectedDate && selectedSlot);
 };
+
+// Déclaration de la fonction displayAppointments qui va permettre d'afficher la liste des rendez-vous enregistrés
+const displayAppointments = () => {
+  // Si aucun rdv
+  if (appointments.length === 0) {
+    appointmentsList.innerHTML =
+      '<p class="info__text">Aucun rendez-vous programmé pour le moment.</p>';
+    return;
+  }
+
+  // Trier par date et ensuite par heure les rdv avec la méthode sort()
+  appointments.sort(
+    // La méthode localeCompare() renvoie un nombre indiquant si la chaîne de caractères courante se situe avant, après ou est la même que la chaîne passée en paramètre.
+    (a, b) => a.date.localeCompare(b.date) || a.slot.localeCompare(b.slot)
+  );
+
+  appointmentsList.innerHTML = "";
+  // Pour chaque rdv
+  appointments.forEach((appointment) => {
+    // Création de l'élément HTML <div>
+    const item = document.createElement("div");
+    item.className = "appointment__item";
+    // Mise en place de la structure HTML
+    item.innerHTML = `
+                <div class="appointment__info">
+                    <h3>${appointment.name} - ${appointment.goal}</h3>
+                    <p><i class="fa-solid fa-calendar-week"></i> Le ${formatDate(
+                      appointment.date
+                    )} de <strong>${appointment.slot} à ${
+      parseInt(appointment.slot) + 1
+    }:00</strong></p>
+                    <p><i class="fa-solid fa-envelope"></i> ${
+                      appointment.email
+                    }</p>
+                    <p><i class="fa-solid fa-phone"></i> ${
+                      appointment.phone
+                    } </p>
+                </div>
+                <button class="cancel__btn" data-id="${
+                  appointment.id
+                }">Annuler</button>
+            `;
+
+    // Ecoute de l'événement "click" pour le bouton Annuler
+    item.querySelector(".cancel__btn").addEventListener("click", (e) => {
+      const idToDelete = e.target.getAttribute("data-id");
+      // Sélection des rdv à conserver avec la méthode filter et suppression du rdv souhaité avec la logique inversée !==
+      appointments = appointments.filter((a) => a.id !== idToDelete);
+      // Mise à jour du LocalStorage
+      localStorage.setItem("coachAppointments", JSON.stringify(appointments));
+
+      // Appel de la fonction displayAppointments()
+      displayAppointments();
+      // Condition if
+      if (selectedDate) generateTimeSlots(); // Appel de la fonction generateTimeSlots() +  Libère le créneau visuellement
+    });
+    // Ajout dela div créée dans le DOM
+    appointmentsList.appendChild(item);
+  });
+};
