@@ -58,7 +58,7 @@ const displayAppointments = () => {
     (a, b) => a.date.localeCompare(b.date) || a.slot.localeCompare(b.slot)
   );
 
-  appointmentsList.innerHTML = "";
+  //appointmentsList.innerHTML = "";
   // Pour chaque rdv
   appointments.forEach((appointment) => {
     // Création de l'élément HTML <div>
@@ -102,3 +102,53 @@ const displayAppointments = () => {
     appointmentsList.appendChild(item);
   });
 };
+
+// Déclaration de la fonction generateTimeSlots qui va permettre de créér les créneaux horaires pour les rdv
+const generateTimeSlots = () => {
+  // slotsContainer.innerHTML = "";
+
+  const bookedSlots = appointments
+    .filter((appointment) => appointment.date === selectedDate)
+    .map((appointment) => appointment.slot);
+
+  // Création de la variable index qui va servir de ompteur pour créer le décalage progressif
+  let index = 0;
+
+  // Boucle for
+  for (let hour = startHour; hour < endHour; hour++) {
+    const timeString = `${hour.toString().padStart(2, "0")}:00`;
+    // console.log(timeString);
+    // Création de l'élément HTML5 <button>
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "slot__btn";
+    button.textContent = `${timeString}`;
+
+    // On injecte l'index dans la variable CSS --DELAY pour la cascade des boutons
+    index++; // Incrémentation de l'index
+
+    if (bookedSlots.includes(timeString)) {
+      button.disabled = true;
+    }
+
+    // Ecoute de l'événement "click" sur le bouton
+    button.addEventListener("click", () => {
+      // Récupération de tous les éléments HTML ayant la classe "slot__btn"
+      document
+        .querySelectorAll(".slot__btn")
+        .forEach((btn) => btn.classList.remove("selected"));
+      button.classList.add("selected");
+      selectedSlot = `${timeString}`;
+      // Appel de la fonction checkFormValidity()
+      checkFormValidity();
+    });
+
+    // Ajout de button dans le DOM
+    slotsContainer.appendChild(button);
+  }
+};
+
+// Appel de la fonction displayAppointments()
+displayAppointments();
+
+generateTimeSlots();
