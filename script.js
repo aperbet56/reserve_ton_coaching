@@ -47,6 +47,7 @@ const checkFormValidity = () => {
 const displayAppointments = () => {
   // Si aucun rdv
   if (appointments.length === 0) {
+    // Création d'un paragraphe
     appointmentsList.innerHTML =
       '<p class="info__text">Aucun rendez-vous programmé pour le moment.</p>';
     return;
@@ -58,7 +59,7 @@ const displayAppointments = () => {
     (a, b) => a.date.localeCompare(b.date) || a.slot.localeCompare(b.slot)
   );
 
-  //appointmentsList.innerHTML = "";
+  appointmentsList.innerHTML = "";
   // Pour chaque rdv
   appointments.forEach((appointment) => {
     // Création de l'élément HTML <div>
@@ -105,7 +106,7 @@ const displayAppointments = () => {
 
 // Déclaration de la fonction generateTimeSlots qui va permettre de créér les créneaux horaires pour les rdv
 const generateTimeSlots = () => {
-  // slotsContainer.innerHTML = "";
+  slotsContainer.innerHTML = "";
 
   const bookedSlots = appointments
     .filter((appointment) => appointment.date === selectedDate)
@@ -127,6 +128,7 @@ const generateTimeSlots = () => {
     // On injecte l'index dans la variable CSS --DELAY pour la cascade des boutons
     index++; // Incrémentation de l'index
 
+    // Condition if
     if (bookedSlots.includes(timeString)) {
       button.disabled = true;
     }
@@ -150,5 +152,3 @@ const generateTimeSlots = () => {
 
 // Appel de la fonction displayAppointments()
 displayAppointments();
-
-generateTimeSlots();
