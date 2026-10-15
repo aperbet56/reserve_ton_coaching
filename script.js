@@ -5,6 +5,11 @@ const bookingForm = document.querySelector("#booking__form");
 const submitBtn = document.querySelector("#submit__btn");
 const appointmentsList = document.querySelector("#appointments__list");
 const copyrightYear = document.querySelector(".year");
+const lastNameInput = document.querySelector("#client__lastname");
+const firstNameInput = document.querySelector("#client__firstname");
+const emailInput = document.querySelector("#client__email");
+const phoneInput = document.querySelector("#client__phone");
+const goalInput = document.querySelector("#booking__goal");
 
 // Configuration des horaires du coach dans des constantes
 const startHour = 8; // 08:00
@@ -177,3 +182,8 @@ dateInput.addEventListener("change", (e) => {
   // Appel de la fonction generateTimeSlots()
   generateTimeSlots();
 });
+
+// Regex
+const regexName = /^[A-Z][A-Za-z\é\è\ê\ô\-]+$/;
+const regexEmail = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
+const regexTelephone = /^(33|0)(6|7|9)\d{8}$/;
