@@ -152,3 +152,28 @@ const generateTimeSlots = () => {
 
 // Appel de la fonction displayAppointments()
 displayAppointments();
+
+// Ecoute de l'événement "change" sur l'input date
+dateInput.addEventListener("change", (e) => {
+  selectedDate = e.target.value;
+  selectedSlot = "";
+  submitBtn.disabled = true;
+
+  // Si aucune date sélectionnée
+  if (!selectedDate) return;
+
+  // Récupération du jour stocké dans la constante dayOfWeek
+  const dayOfWeek = new Date(selectedDate).getDay();
+  // console.log(dayOfWeek);
+
+  // Condition if  0 = Dimanche, 6 = Samedi
+  if (dayOfWeek === 0 || dayOfWeek === 6) {
+    // Création d'un paragraphe
+    slotsContainer.innerHTML =
+      '<p class="info__text" style="color: #ff5252;">Le coach se repose le week-end ! Choisissez un jour de la semaine.</p>';
+    return;
+  }
+
+  // Appel de la fonction generateTimeSlots()
+  generateTimeSlots();
+});
