@@ -239,7 +239,7 @@ select:focus {
 
 .slot__btn:disabled {
     background-color: #222226;
-    color: #444;
+    color: #444444;
     border-color: #222226;
     cursor: not-allowed;
     text-decoration: line-through;
