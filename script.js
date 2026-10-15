@@ -5,10 +5,10 @@ const bookingForm = document.querySelector("#booking__form");
 const submitBtn = document.querySelector("#submit__btn");
 const appointmentsList = document.querySelector("#appointments__list");
 const copyrightYear = document.querySelector(".year");
-const lastNameInput = document.querySelector("#client__lastname");
-const firstNameInput = document.querySelector("#client__firstname");
-const emailInput = document.querySelector("#client__email");
-const phoneInput = document.querySelector("#client__phone");
+const lastNameInput = document.querySelector("#lastname");
+const firstNameInput = document.querySelector("#firstname");
+const emailInput = document.querySelector("#email");
+const phoneInput = document.querySelector("#phone");
 const goalInput = document.querySelector("#booking__goal");
 
 // Configuration des horaires du coach dans des constantes
