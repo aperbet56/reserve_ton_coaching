@@ -187,3 +187,23 @@ dateInput.addEventListener("change", (e) => {
 const regexName = /^[A-Z][A-Za-z\é\è\ê\ô\-]+$/;
 const regexEmail = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
 const regexTelephone = /^(33|0)(6|7|9)\d{8}$/;
+
+/**
+ * Déclaration de la fonction lastNameValidation pour la validation du champ nom
+ *  @param {String} lastNameInput
+ */
+const lastNameValidation = (lastNameInput) => {
+  // Ecoute de l'événement "input" sur l'input lastName
+  lastNameInput.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (regexName.test(lastNameInput.value) === false) {
+      lastNameInput.style.borderColor = "#ff5252";
+      return false;
+    } else {
+      lastNameInput.style.borderColor = "#00e676";
+      return true;
+    }
+  });
+};
+// Appel de la fonction lastNameValidation
+lastNameValidation(lastNameInput);
