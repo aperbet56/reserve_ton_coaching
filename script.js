@@ -229,3 +229,24 @@ const firstNameValidation = (firstNameInput) => {
 
 // Appel de la fonction firstNameValidation
 firstNameValidation(firstNameInput);
+
+/**
+ * Déclaration de la fonction emailValidation pour la validation du champ email
+ *  @param {String} emailInput
+ */
+const emailValidation = (emailInput) => {
+  // Ecoute de l'événement "input" sur l'input email
+  emailInput.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (regexEmail.test(emailInput.value) === false) {
+      emailInput.style.borderColor = "#ff5252";
+      return false;
+    } else {
+      emailInput.style.borderColor = "#00e676";
+      return true;
+    }
+  });
+};
+
+// Appel de la fonction emailValidation
+emailValidation(emailInput);
