@@ -205,5 +205,27 @@ const lastNameValidation = (lastNameInput) => {
     }
   });
 };
+
 // Appel de la fonction lastNameValidation
 lastNameValidation(lastNameInput);
+
+/**
+ * Fonction firstNameValidation pour la validation du champ prénom
+ * @param {String} firstNameInput
+ */
+const firstNameValidation = (firstNameInput) => {
+  // Ecoute de l'événement "input" sur l'input firstName
+  firstNameInput.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (regexName.test(firstNameInput.value) === false) {
+      firstNameInput.style.borderColor = "#ff5252";
+      return false;
+    } else {
+      firstNameInput.style.borderColor = "#00e676";
+      return true;
+    }
+  });
+};
+
+// Appel de la fonction firstNameValidation
+firstNameValidation(firstNameInput);
