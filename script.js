@@ -160,7 +160,9 @@ displayAppointments();
 
 // Ecoute de l'événement "change" sur l'input date
 dateInput.addEventListener("change", (e) => {
+  // Récupération de la date
   selectedDate = e.target.value;
+  // Créneaux horaires vide
   selectedSlot = "";
   submitBtn.disabled = true;
 
@@ -189,14 +191,16 @@ const regexEmail = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
 const regexTelephone = /^(?:(?:(?:\+|00)33)|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
 
 /**
- * Explication de la regexTelephone
+ * Explication de la regexTelephone :
+ *
  * `^` : Début de la chaîne.
  * `(?:(?:(?:\+|00)33)|`0`)` : Le numéro commence soit par `+33`, `0033`, soit par `0`.
  * `\s*[1-9]` : Un espace optionnel (`\s*`), puis le premier chiffre du numéro national (compris entre 1 et 9).
  * `(?:[\s.-]*\d{2}){4}` : Les 4 blocs de 2 chiffres restants, séparés optionnellement par un espace, un point ou un tiret (`\s.-`).
  * `$` : Fin de la chaîne.
  *
- * Exemple de numéros acceptés
+ * Exemple de numéros acceptés :
+ *
  * `01 23 45 67 89`
  * `+33 1 23 45 67 89`
  * `0033123456789`
