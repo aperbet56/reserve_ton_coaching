@@ -286,3 +286,15 @@ const phoneValidation = (phoneInput) => {
 
 // Appel de la fonction phoneValidation
 phoneValidation(phoneInput);
+
+// Déclaration de la fonction goalValidation qui va permettre la validation du dernier champ du formulaire (select)
+const goalValidation = () => {
+  // Ecoute de l'événement "click" sur le select
+  goalInput.addEventListener("click", (e) => {
+    e.preventDefault();
+    goalInput.style.borderColor = "#00e676";
+  });
+};
+
+// Appel de la fonction goalValidation
+goalValidation();
