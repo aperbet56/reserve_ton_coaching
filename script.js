@@ -250,3 +250,24 @@ const emailValidation = (emailInput) => {
 
 // Appel de la fonction emailValidation
 emailValidation(emailInput);
+
+/**
+ * Déclaration de la fonction phoneValidation pour la validation du champ téléphone
+ *  @param {Number} phoneInput
+ */
+const phoneValidation = (phoneInput) => {
+  // Ecoute de l'événement "input" sur l'input phone
+  phoneInput.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (regexTelephone.test(phoneInput.value) === false) {
+      phoneInput.style.borderColor = "#ff5252";
+      return false;
+    } else {
+      phoneInput.style.borderColor = "#00e676";
+      return true;
+    }
+  });
+};
+
+// Appel de la fonction phoneValidation
+phoneValidation(phoneInput);
