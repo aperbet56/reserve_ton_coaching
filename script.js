@@ -186,7 +186,7 @@ dateInput.addEventListener("change", (e) => {
 // Regex
 const regexName = /^[A-Z][A-Za-z\é\è\ê\ô\-]+$/;
 const regexEmail = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
-const regexTelephone = /^(33|0)(6|7|9)\d{8}$/;
+const regexTelephone = /^(?:(?:(?:\+|00)33)|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
 
 /**
  * Déclaration de la fonction lastNameValidation pour la validation du champ nom
