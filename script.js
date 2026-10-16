@@ -210,7 +210,7 @@ const lastNameValidation = (lastNameInput) => {
 lastNameValidation(lastNameInput);
 
 /**
- * Fonction firstNameValidation pour la validation du champ prénom
+ * Déclaration de la lonction firstNameValidation pour la validation du champ prénom
  * @param {String} firstNameInput
  */
 const firstNameValidation = (firstNameInput) => {
