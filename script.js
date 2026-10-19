@@ -321,6 +321,7 @@ const sendFormData = () => {
       alert("Veuillez remplir correctement les champs du formulaire !");
       return;
     } else {
+      // Création de l'objet newAppointment
       const newAppointment = {
         id: Date.now().toString(),
         date: selectedDate,
@@ -331,7 +332,8 @@ const sendFormData = () => {
         phone: phoneInput.value,
         goal: goalInput.value,
       };
-      console.log(newAppointment);
+      // console.log(newAppointment);
+      // Ajout du nouveau rdv dans le localStorage
       appointments.push(newAppointment);
       localStorage.setItem("coachAppointments", JSON.stringify(appointments));
 
@@ -341,12 +343,18 @@ const sendFormData = () => {
         )} à ${selectedSlot}. Go ! 🔥`
       );
     }
-    /* bookingForm.reset();
+    // Remise à zéro du formulaire
+    bookingForm.reset();
+    // Rechargement de la page
     window.location.reload();
+    // On vide le champ date
     dateInput.value = "";
+    // On vide le créneau sélectionné
     selectedSlot = "";
+    // Appel de la fonction checkFormValidity()
     checkFormValidity();
-    displayAppointments();*/
+    // Appel de la fonction displayAppointments()
+    displayAppointments();
   });
 };
 
