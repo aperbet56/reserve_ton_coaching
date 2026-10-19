@@ -302,3 +302,53 @@ const goalValidation = () => {
 
 // Appel de la fonction goalValidation
 goalValidation();
+
+// Déclaration de la fonction sendFormData qui va permettre de soumettre les données du formulaire
+const sendFormData = () => {
+  // Ecoute de l'événment "click" sur le bouton "confirmer mon rdv"
+  submitBtn.addEventListener("click", (e) => {
+    // Suppression du comportement par défaut
+    e.preventDefault();
+    // Condition if... esle
+    if (
+      !selectedDate ||
+      !selectedSlot ||
+      regexName.test(lastNameInput.value) === false ||
+      regexName.test(firstNameInput.value) === false ||
+      regexTelephone.test(phoneInput.value) === false ||
+      regexEmail.test(emailInput.value) === false
+    ) {
+      alert("Veuillez remplir correctement les champs du formulaire !");
+      return;
+    } else {
+      const newAppointment = {
+        id: Date.now().toString(),
+        date: selectedDate,
+        slot: selectedSlot,
+        name: lastNameInput.value,
+        firstname: firstNameInput.value,
+        email: emailInput.value,
+        phone: phoneInput.value,
+        goal: goalInput.value,
+      };
+      console.log(newAppointment);
+      appointments.push(newAppointment);
+      localStorage.setItem("coachAppointments", JSON.stringify(appointments));
+
+      alert(
+        `Félicitations ! Votre séance de coaching est réservée pour le ${formatDate(
+          selectedDate
+        )} à ${selectedSlot}. Go ! 🔥`
+      );
+    }
+    /* bookingForm.reset();
+    window.location.reload();
+    dateInput.value = "";
+    selectedSlot = "";
+    checkFormValidity();
+    displayAppointments();*/
+  });
+};
+
+// Appel de la fonction sendFormData()
+sendFormData();
