@@ -113,6 +113,9 @@ const displayAppointments = () => {
 const generateTimeSlots = () => {
   slotsContainer.innerHTML = "";
 
+  // Sécurité : Si aucune date n'est sélectionnée, on n'affiche rien et on s'arrête
+  if (!selectedDate) return;
+
   const bookedSlots = appointments
     .filter((appointment) => appointment.date === selectedDate)
     .map((appointment) => appointment.slot);
@@ -124,14 +127,21 @@ const generateTimeSlots = () => {
   for (let hour = startHour; hour < endHour; hour++) {
     const timeString = `${hour.toString().padStart(2, "0")}:00`;
     // console.log(timeString);
+
     // Création de l'élément HTML5 <button>
     const button = document.createElement("button");
     button.type = "button";
     button.className = "slot__btn";
     button.textContent = `${timeString}`;
 
-    // On injecte l'index dans la variable CSS --DELAY pour la cascade des boutons
     index++; // Incrémentation de l'index
+    button.style.setProperty("--delay", index);
+
+    // Si le formulaire vient d'être soumis, selectedSlot est vide ("").
+    // On s'assure qu'aucun bouton ne garde la classe "selected".
+    if (selectedSlot === timeString) {
+      button.classList.add("selected");
+    }
 
     // Condition if
     if (bookedSlots.includes(timeString)) {
@@ -319,7 +329,7 @@ const sendFormData = () => {
       regexEmail.test(emailInput.value) === false
     ) {
       alert("Veuillez remplir correctement les champs du formulaire !");
-      return;
+      return; // On arrête l'exécution si une condition n'est pas respectée
     } else {
       // Création de l'objet newAppointment
       const newAppointment = {
@@ -333,7 +343,7 @@ const sendFormData = () => {
         goal: goalInput.value,
       };
       // console.log(newAppointment);
-      // Ajout du nouveau rdv dans le localStorage
+      // Ajout du nouveau rdv et sauvegarde dans le localStorage
       appointments.push(newAppointment);
       localStorage.setItem("coachAppointments", JSON.stringify(appointments));
 
