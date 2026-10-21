@@ -25,12 +25,13 @@ Lien vers le projet :
 - Mobile first
 - Page web responsive
 - Utilisation d'un normaliseur : le fichier normalize.css
-- Importation de la bibliothèque Font-Awesome pour les icônes
+- FontAwesome (CDN) : Intégration de la bibliothèque d'icônes vectorielles
 - Inmportation des polices "Montserrat" et "Inter"
 - Commentaires HTML
 - Commentaires CSS
 - JavaScript (ES6)
-- Manipulation du DOM
+- Code JavaScript commenté
+- Manipulation dynamique du DOM et fonctions fléchées
 - localStorage
 - addeventListener
 - regex
