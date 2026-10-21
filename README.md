@@ -40,9 +40,13 @@ Lien vers le projet :
 
 Le projet se compose de quatre fichiers principaux regroupés dans le même répertoire :
 
-reserve_ton_coaching/
-├── index.html # Page principale (Calendrier et réservation)
+reserve-ton_coaching/
+│
+├── index.html # Page principale du site
+├── normalize.css # Fichier normalize.css
 ├── style.css # Toutes les règles de design et animations
-├── normalize.css # Règle du fichier normalize.css
 ├── script.js # Logique globale et LocalStorage
-└── README.md
+│
+├── img/ # favicon et prewiews
+│
+└── README.md # Fichier de documentation du projet
