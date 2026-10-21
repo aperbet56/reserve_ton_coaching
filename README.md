@@ -8,12 +8,12 @@ Ce projet dispose de plusieurs fonctionnalités :
 
 - **Réservation Intuitive**: Formulaire étape par étape pour choisir sa prestation, sa date et valider ses informations.
 - **Stockage Local (LocalStorage)**: Les rendez-vous pris par le client sont sauvegardés directement dans son navigateur pour persister au rafraîchissement de la page.
-- **Visualisation du Planning :** Un espace dédié pour consulter la liste des rendez-vous enregistrés.
+- **Visualisation du Planning** : Un espace dédié pour consulter la liste des rendez-vous enregistrés.
 - **Design Responsive** : Interface optimisée pour une utilisation fluide sur smartphones, tablettes et ordinateurs.
 
 ## 📸 Démonstration
 
-Lien vers le projet :
+Lien vers le projet : https://aperbet56.github.io/reserve_ton_coaching/
 
 ## 🛠️ Projet développé avec
 
