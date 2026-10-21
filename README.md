@@ -14,3 +14,23 @@ Ce projet dispose de plusieurs fonctionnalités :
 ## 📸 Démonstration
 
 Lien vers le projet :
+
+## 🛠️ Projet développé avec
+
+- Utilisation des balises sémantiques HTML5
+- CSS3
+- Variables CSS
+- Flexbox
+- Animations CSS ( transition, @keyframes)
+- Mobile first
+- Page web responsive
+- Utilisation d'un normaliseur : le fichier normalize.css
+- Importation de la bibliothèque Font-Awesome pour les icônes
+- Inmportation des polices "Montserrat" et "Inter"
+- Commentaires HTML
+- Commentaires CSS
+- JavaScript (ES6)
+- Manipulation du DOM
+- localStorage
+- addeventListener
+- regex
