@@ -35,3 +35,14 @@ Lien vers le projet :
 - localStorage
 - addeventListener
 - regex
+
+## 📂 Structure du projet
+
+Le projet se compose de quatre fichiers principaux regroupés dans le même répertoire :
+
+reserve_ton_coaching/
+├── index.html # Page principale (Calendrier et réservation)
+├── style.css # Toutes les règles de design et animations
+├── normalize.css # Règle du fichier normalize.css
+├── script.js # Logique globale et LocalStorage
+└── README.md
