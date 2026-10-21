@@ -38,15 +38,15 @@ Lien vers le projet :
 
 ## 📂 Structure du projet
 
-Le projet se compose de quatre fichiers principaux regroupés dans le même répertoire :
-
-reserve-ton_coaching/
+```text
+reserve_ton_coaching/
 │
-├── index.html # Page principale du site
-├── normalize.css # Fichier normalize.css
-├── style.css # Toutes les règles de design et animations
-├── script.js # Logique globale et LocalStorage
+├── index.html          # Page principale du site
+├── normalize.css       # Fichier normalize.css
+├── style.css           # Règles de design et animations
+├── script.js           # Logique golbale et localStorage
 │
-├── img/ # favicon et prewiews
+├── img/                # favicon et prewiews
 │
-└── README.md # Fichier de documentation du projet
+└── README.md           # Fichier de documentation du projet
+```
