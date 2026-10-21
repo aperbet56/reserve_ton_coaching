@@ -6,8 +6,8 @@ Création d'une application web légère, moderne et responsive conçue pour pre
 
 Ce projet dispose de plusieurs fonctionnalités :
 
-- **Réservation Intuitive**: Formulaire étape par étape pour choisir sa prestation, sa date et valider ses informations.
-- **Stockage Local (LocalStorage)**: Les rendez-vous pris par le client sont sauvegardés directement dans son navigateur pour persister au rafraîchissement de la page.
+- **Réservation Intuitive** : Formulaire étape par étape pour choisir sa prestation, sa date et valider ses informations.
+- **Stockage Local (LocalStorage)** : Les rendez-vous pris par le client sont sauvegardés directement dans son navigateur pour persister au rafraîchissement de la page.
 - **Visualisation du Planning** : Un espace dédié pour consulter la liste des rendez-vous enregistrés.
 - **Design Responsive** : Interface optimisée pour une utilisation fluide sur smartphones, tablettes et ordinateurs.
 
@@ -44,9 +44,9 @@ reserve_ton_coaching/
 ├── index.html          # Page principale du site
 ├── normalize.css       # Fichier normalize.css
 ├── style.css           # Règles de design et animations
-├── script.js           # Logique golbale et localStorage
+├── script.js           # Logique globale et localStorage
 │
-├── img/                # favicon et prewiews
+├── img/                # favicon et prewiew
 │
 └── README.md           # Fichier de documentation du projet
 ```
