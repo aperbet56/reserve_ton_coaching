@@ -50,3 +50,7 @@ reserve_ton_coaching/
 │
 └── README.md           # Fichier de documentation du projet
 ```
+
+## 📝 Licence
+
+Projet libre de droits. Vous pouvez l'utiliser, le modifier et le distribuer selon vos besoins professionnels ou éducatifs.
