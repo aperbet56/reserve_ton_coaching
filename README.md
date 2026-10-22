@@ -1,5 +1,9 @@
 ## 📅 APPLICATION DE PRISE DE RDV - COACHING
 
+- **Preview 1**
+
+![Design preview for the project](./img/preview.png)
+
 ## 🚀 Le challenge
 
 Création d'une application web légère, moderne et responsive conçue pour prendre et/ou gérer la prise de rendez-vous avec un coach sportif professionnel. Développée entièrement en technologies web natives, elle offre une expérience fluide et rapide.
@@ -46,7 +50,7 @@ reserve_ton_coaching/
 ├── style.css           # Règles de design et animations
 ├── script.js           # Logique globale et localStorage
 │
-├── img/                # favicon et prewiew
+├── img/                # favicon et prewiews
 │
 └── README.md           # Fichier de documentation du projet
 ```
