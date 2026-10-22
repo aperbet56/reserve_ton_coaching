@@ -4,6 +4,10 @@
 
 ![Design preview for the project](./img/preview.png)
 
+- **Preview 2**
+
+![Design preview for the project](./img/preview-2.png)
+
 ## 🚀 Le challenge
 
 Création d'une application web légère, moderne et responsive conçue pour prendre et/ou gérer la prise de rendez-vous avec un coach sportif professionnel. Développée entièrement en technologies web natives, elle offre une expérience fluide et rapide.
